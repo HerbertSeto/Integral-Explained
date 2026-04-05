@@ -1,17 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Integral Explained — Frontend
 
-## Getting Started
+Next.js 19 (App Router) frontend for the Integral Explained calculator.
 
-First, run the development server:
+See the [root README](../README.md) for full setup instructions and project overview.
+
+## Quick start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The backend must be running on port 8000.
+
+## Key directories
+
+```
+src/
+├── app/
+│   ├── page.tsx            # Main calculator page
+│   ├── page.module.css     # Page-scoped styles
+│   ├── layout.tsx          # Root layout + metadata
+│   └── globals.css         # Global CSS reset and base styles
+├── components/
+│   ├── MathDisplay.tsx     # KaTeX LaTeX renderer
+│   ├── StepsViewer.tsx     # Renders LLM step-by-step solution
+│   └── PlotPanel.tsx       # Plotly integrand / antiderivative graph
+└── lib/
+    ├── api.ts              # fetch wrapper for POST /integrate
+    └── types.ts            # TypeScript types mirroring backend schemas
+```
